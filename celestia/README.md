@@ -42,24 +42,26 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$pruning_interval\"/" $HOME/.celestia-app/config/app.toml
 ```
-#Yeni Cüzdan Oluşturma
+# Yeni Cüzdan Oluşturma
 
 ```
 celestia-appd keys add walletname
 ```
 
-#Eski Cüzdan Geri Yükleme
+# Eski Cüzdan Geri Yükleme
 ```
 celestia-appd keys add walletname --recover
-
+```
 
 
 
 Discord üzerinden Test Tokeni Almanız Lazım. https://discord.gg/JeRdw5veKu
 ```
 $request walletadress
+```
 
-Continue the Installation
+# Kuruluma Devam edelim, Genesis dosylarını çekmemiz gerek
+```
 wget -O $HOME/.celestia-app/config/genesis.json "https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/genesis.json"
 
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n') && echo $BOOTSTRAP_PEERS
@@ -88,7 +90,10 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 cat /etc/systemd/system/celestia-appd.service
-Node Start
+```
+
+# Node'umuzu Başlatma
+```
 cd $HOME/.celestia-app
 celestia-appd tendermint unsafe-reset-all --home "$HOME/.celestia-app"
 sudo systemctl enable celestia-appd
@@ -101,8 +106,10 @@ sudo journalctl -u celestia-appd.service -f
 To check If Your Node is in Sync Before Going Forward
 curl -s localhost:26657/status | jq .result | jq .sync_info
 "catching_up": false
+```
 
-Connect Validator
+# Validator Oluşturma 
+```
 celestia-appd tx staking create-validator \
     --amount=1000000utia \
     --pubkey=$(celestia-appd tendermint show-validator) \
@@ -114,8 +121,10 @@ celestia-appd tx staking create-validator \
     --min-self-delegation=1000000 \
     --from=walletname
 confirm transaction before signing and broadcasting [y/N]: y
+```
 
-Delegate to a Validator
+# Validator Delegate Stake etme
 celestia-appd tx staking delegate VALIDATOR_ADDRESS 1000000utia --chain-id mamaki --fees=1utia --from walletname
-Unjail
+
+# Unjail İşlemi
 celestia-appd tx slashing unjail --from=walletname --chain-id mamaki
