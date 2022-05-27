@@ -23,7 +23,7 @@ go version
 ```
 
 
-Bu komuttan Sonra şu stırı Görmeniz gerek.
+Bu komuttan Sonra şu satırı Görmeniz gerek.
 go version go1.17.2 linux/amd64
 
 
@@ -55,12 +55,12 @@ celestia-appd keys add walletname --recover
 
 
 
-Discord üzerinden Test Tokeni Almanız Lazım. https://discord.gg/JeRdw5veKu
+Discord üzerinden Test Tokeni Almanız Lazım. https://discord.gg/jyns9FWJSa
 ```
 $request walletadress
 ```
 
-# Kuruluma Devam edelim, Genesis dosylarını çekmemiz gerek
+# Kuruluma devam edelim, Genesis dosylarını çekmemiz gerek
 ```
 wget -O $HOME/.celestia-app/config/genesis.json "https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/genesis.json"
 
@@ -92,7 +92,7 @@ EOF
 cat /etc/systemd/system/celestia-appd.service
 ```
 
-# Node'umuzu Başlatma
+# Node'u Başlatma
 ```
 cd $HOME/.celestia-app
 celestia-appd tendermint unsafe-reset-all --home "$HOME/.celestia-app"
