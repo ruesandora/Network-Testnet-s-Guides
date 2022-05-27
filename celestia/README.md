@@ -1,4 +1,4 @@
-# Celestia Mamaki Testneti Node Kurulum, Validtor Oluşturma Rehberi
+# Celestia Mamaki Testneti Node Kurulum, Validötor Oluşturma Rehberi
 ![image](https://user-images.githubusercontent.com/101149671/170767187-84536f33-7b4c-48da-bf9c-f50cb7fb0367.png)
 # Sistem Gereksinimleri
   Memory: 8 GB RAM
