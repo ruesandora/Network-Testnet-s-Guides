@@ -1,4 +1,4 @@
-<h1>Merhaba dostlarım Aptos testneti i&ccedil;in Node kurma rehberi hazırladık, formu doldurmayı unutmayın. Sunucunuzu temin edip SSH ile baglandıktan sonra y&ouml;nergeleri takip edin.</h1>
+<h1> Selamlar, Aptos testneti i&ccedil;in Node kurma rehberi ile karşınızdayım, formu doldurmayı unutmayın. Sunucunuzu temin edip SSH ile baglandıktan sonra y&ouml;nergeleri takip edin.</h1>
 <p>https://community.aptoslabs.com/ adresinden Form doldurmanız lazım. Siteye girin, Github ile giriş yapın sonrasında mail isteyecektir mailinizi girin.</p>
 <p>Maile gelen linkten forma devam etmemiz lazım.</p>
 <p><br></p>
