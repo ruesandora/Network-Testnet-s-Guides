@@ -26,24 +26,16 @@ go version
 Bu komuttan Sonra şu stırı Görmeniz gerek.
 go version go1.17.2 linux/amd64
 
+
 ```
 cd $HOME
-rm -rf celestia-app
-git clone https://github.com/celestiaorg/celestia-app.git
-cd celestia-app/
-APP_VERSION=$(curl -s \
-  https://api.github.com/repos/celestiaorg/celestia-app/releases/latest \
-  | jq -r ".tag_name")
-git checkout tags/$APP_VERSION -b $APP_VERSION
-make install
-cd $HOME
 celestia-appd init nodename --chain-id mamaki
+
 
 pruning="custom"
 pruning_keep_recent="100"
 pruning_interval="10"
 
-//Altaki komutlar Seed & Ayar düzenleme komutu
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.celestia-app/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \
 \"$pruning_keep_recent\"/" $HOME/.celestia-app/config/app.toml
@@ -56,13 +48,17 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 celestia-appd keys add walletname
 ```
 
-#Eski Cüzdn Kullanma
+#Eski Cüzdan Geri Yükleme
 ```
 celestia-appd keys add walletname --recover
 
-Do not forget to save your wallet information (words)!
-To get a test token, you must enter the Faucet section and type as follows. https://discord.gg/JeRdw5veKu
+
+
+
+Discord üzerinden Test Tokeni Almanız Lazım. https://discord.gg/JeRdw5veKu
+```
 $request walletadress
+
 Continue the Installation
 wget -O $HOME/.celestia-app/config/genesis.json "https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/genesis.json"
 
