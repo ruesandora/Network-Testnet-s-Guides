@@ -6,7 +6,9 @@
   Disk: 250 GB SSD Storage
   Bandwidth: 1 Gbps for Download/100 Mbps for Upload
   
-# Gereklü Kütüphane Kurulumu
+# Explorer
+https://celestia.explorers.guru/validators
+# Gerekli Kütüphane Kurulumu
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
