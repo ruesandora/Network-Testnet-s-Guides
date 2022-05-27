@@ -40,7 +40,7 @@ APP_VERSION=$(curl -s \
 git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
-
+# Node ayarları (Budama vs)
 ```
 cd $HOME
 celestia-appd init nodename --chain-id mamaki
